@@ -94,22 +94,22 @@ module.exports = grammar({
 		range_character: $ => /\da-zA-Z/,
 
 		quantifier: $ =>
-			choice($.quantifier, seq('lazy', $.quantifier)),
-
-		quantifier_normal: $ =>
-			choice(
-				seq($.number, 'of', $.pattern),
-				seq(
-					$.number,
-					'to',
-					$.number,
-					'of',
-					$.pattern,
+			seq(
+				optional('lazy'),
+				choice(
+					seq($.number, 'of', $.pattern),
+					seq(
+						$.number,
+						'to',
+						$.number,
+						'of',
+						$.pattern,
+					),
+					seq('over', $.number, 'of', $.pattern),
+					seq('some', 'of', $.pattern),
+					seq('any', 'of', $.pattern),
+					seq('option', 'of', $.pattern),
 				),
-				seq('over', $.number, 'of', $.pattern),
-				seq('some', 'of', $.pattern),
-				seq('any', 'of', $.pattern),
-				seq('option', 'of', $.pattern),
 			),
 
 		number: $ => /[1-9]\d*/,
