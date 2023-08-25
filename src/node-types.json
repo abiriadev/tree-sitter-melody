@@ -30,6 +30,11 @@
     }
   },
   {
+    "type": "comment",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "group",
     "named": true,
     "fields": {},

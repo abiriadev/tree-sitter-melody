@@ -1,7 +1,7 @@
 module.exports = grammar({
 	name: 'melody',
 
-	extra: $ => [/\s/, $.comment],
+	extras: $ => [/\s/, $.comment],
 
 	rules: {
 		source_file: $ => repeat($.stmt),
