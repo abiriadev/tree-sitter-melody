@@ -125,7 +125,17 @@
   {
     "type": "source_file",
     "named": true,
-    "fields": {}
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "stmt",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "stmt",
@@ -161,10 +171,6 @@
     "type": "unicode_category",
     "named": true,
     "fields": {}
-  },
-  {
-    "type": "",
-    "named": false
   },
   {
     "type": "\"",

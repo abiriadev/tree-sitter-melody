@@ -2,7 +2,7 @@ module.exports = grammar({
 	name: 'melody',
 
 	rules: {
-		source_file: $ => '',
+		source_file: $ => repeat($.stmt),
 
 		stmt: $ => seq($.pattern, ';'),
 
