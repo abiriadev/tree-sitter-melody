@@ -80,6 +80,10 @@
           "named": true
         },
         {
+          "type": "identifier",
+          "named": true
+        },
+        {
           "type": "literal",
           "named": true
         },
@@ -436,6 +440,10 @@
     "named": false
   },
   {
+    "type": "=",
+    "named": false
+  },
+  {
     "type": "`",
     "named": false
   },
@@ -460,7 +468,15 @@
     "named": false
   },
   {
+    "type": "identifier",
+    "named": true
+  },
+  {
     "type": "lazy",
+    "named": false
+  },
+  {
+    "type": "let",
     "named": false
   },
   {

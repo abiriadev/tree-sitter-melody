@@ -17,6 +17,7 @@ module.exports = grammar({
 				$.raw,
 				$.group,
 				$.assertion,
+				$.identifier,
 			),
 
 		literal: $ =>
@@ -139,5 +140,10 @@ module.exports = grammar({
 
 		comment: $ =>
 			choice(seq('//', /.*/), seq('/*', /.*/, '*/')),
+
+		variable: $ =>
+			seq('let', $.identifier, '=', $.block),
+
+		identifier: $ => /\.\w+/,
 	},
 })
