@@ -11,5 +11,26 @@ module.exports = grammar({
 			),
 
 		string: $ => /\w+/,
+
+		symbol: $ =>
+			choice(
+				'<char>',
+				'<space>',
+				'<whitespace>',
+				'<newline>',
+				'<tab>',
+				'<return>',
+				'<feed>',
+				'<null>',
+				'<digit>',
+				'<vertical>',
+				'<word>',
+				'<alphabetic>',
+				'<alphanumeric>',
+				'<boundary>',
+				'<backspace>',
+				'<start>', // special symbol
+				'<end>', // special symbol
+			),
 	},
 })

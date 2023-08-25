@@ -17,6 +17,74 @@
     "named": false
   },
   {
+    "type": "<alphabetic>",
+    "named": false
+  },
+  {
+    "type": "<alphanumeric>",
+    "named": false
+  },
+  {
+    "type": "<backspace>",
+    "named": false
+  },
+  {
+    "type": "<boundary>",
+    "named": false
+  },
+  {
+    "type": "<char>",
+    "named": false
+  },
+  {
+    "type": "<digit>",
+    "named": false
+  },
+  {
+    "type": "<end>",
+    "named": false
+  },
+  {
+    "type": "<feed>",
+    "named": false
+  },
+  {
+    "type": "<newline>",
+    "named": false
+  },
+  {
+    "type": "<null>",
+    "named": false
+  },
+  {
+    "type": "<return>",
+    "named": false
+  },
+  {
+    "type": "<space>",
+    "named": false
+  },
+  {
+    "type": "<start>",
+    "named": false
+  },
+  {
+    "type": "<tab>",
+    "named": false
+  },
+  {
+    "type": "<vertical>",
+    "named": false
+  },
+  {
+    "type": "<whitespace>",
+    "named": false
+  },
+  {
+    "type": "<word>",
+    "named": false
+  },
+  {
     "type": "string",
     "named": true
   }
