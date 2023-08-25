@@ -16,6 +16,7 @@ module.exports = grammar({
 				$.quantifier,
 				$.raw,
 				$.group,
+				$.assertion,
 			),
 
 		literal: $ =>
@@ -123,6 +124,15 @@ module.exports = grammar({
 				seq('capture', optional($.string), $.block),
 				seq('match', $.block),
 				seq('either', $.block),
+			),
+
+		assertion: $ =>
+			seq(
+				optional('not'),
+				choice(
+					seq('ahead', $.block),
+					seq('behind', $.block),
+				),
 			),
 
 		block: $ => seq('{', repeat($.stmt), '}'),

@@ -47,6 +47,10 @@
         {
           "type": "SYMBOL",
           "name": "group"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "assertion"
         }
       ]
     },
@@ -556,6 +560,54 @@
             {
               "type": "SYMBOL",
               "name": "block"
+            }
+          ]
+        }
+      ]
+    },
+    "assertion": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "not"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "ahead"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "block"
+                }
+              ]
+            },
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "behind"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "block"
+                }
+              ]
             }
           ]
         }

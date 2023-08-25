@@ -1,5 +1,20 @@
 [
   {
+    "type": "assertion",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "block",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "block",
     "named": true,
     "fields": {},
@@ -56,6 +71,10 @@
       "multiple": false,
       "required": true,
       "types": [
+        {
+          "type": "assertion",
+          "named": true
+        },
         {
           "type": "group",
           "named": true
@@ -421,7 +440,15 @@
     "named": false
   },
   {
+    "type": "ahead",
+    "named": false
+  },
+  {
     "type": "any",
+    "named": false
+  },
+  {
+    "type": "behind",
     "named": false
   },
   {
@@ -438,6 +465,10 @@
   },
   {
     "type": "match",
+    "named": false
+  },
+  {
+    "type": "not",
     "named": false
   },
   {
