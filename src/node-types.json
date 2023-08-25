@@ -1,5 +1,20 @@
 [
   {
+    "type": "block",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "pattern",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "literal",
     "named": true,
     "fields": {},
@@ -346,7 +361,19 @@
     "named": false
   },
   {
+    "type": "capture",
+    "named": false
+  },
+  {
+    "type": "either",
+    "named": false
+  },
+  {
     "type": "lazy",
+    "named": false
+  },
+  {
+    "type": "match",
     "named": false
   },
   {
@@ -379,6 +406,14 @@
   },
   {
     "type": "to",
+    "named": false
+  },
+  {
+    "type": "{",
+    "named": false
+  },
+  {
+    "type": "}",
     "named": false
   }
 ]

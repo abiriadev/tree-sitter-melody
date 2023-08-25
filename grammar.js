@@ -112,5 +112,14 @@ module.exports = grammar({
 		number: $ => /[1-9]\d*/,
 
 		raw: $ => seq('`', /.*/, '`'),
+
+		group: $ =>
+			choice(
+				seq('capture', optional($.string), $.block),
+				seq('match', $.block),
+				seq('either', $.block),
+			),
+
+		block: $ => seq('{', repeat($.pattern), '}'),
 	},
 })
