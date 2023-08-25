@@ -4,6 +4,8 @@ module.exports = grammar({
 	rules: {
 		source_file: $ => '',
 
+		pattern: $ => choice($.literal, $.symbol, $.range),
+
 		literal: $ =>
 			choice(
 				seq("'", $.string, "'"),

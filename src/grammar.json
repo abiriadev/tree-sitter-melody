@@ -5,6 +5,23 @@
       "type": "STRING",
       "value": ""
     },
+    "pattern": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "literal"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "symbol"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "range"
+        }
+      ]
+    },
     "literal": {
       "type": "CHOICE",
       "members": [
