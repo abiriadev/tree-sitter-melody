@@ -1,6 +1,8 @@
 module.exports = grammar({
 	name: 'melody',
 
+	extra: $ => [/\s/, $.comment],
+
 	rules: {
 		source_file: $ => repeat($.stmt),
 
@@ -124,5 +126,8 @@ module.exports = grammar({
 			),
 
 		block: $ => seq('{', repeat($.stmt), '}'),
+
+		comment: $ =>
+			choice(seq('//', /.*/), seq('/*', /.*/, '*/')),
 	},
 })
