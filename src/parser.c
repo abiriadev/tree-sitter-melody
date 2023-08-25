@@ -16,9 +16,9 @@
 #define LANGUAGE_VERSION 14
 #define STATE_COUNT 4
 #define LARGE_STATE_COUNT 2
-#define SYMBOL_COUNT 69
+#define SYMBOL_COUNT 70
 #define ALIAS_COUNT 0
-#define TOKEN_COUNT 68
+#define TOKEN_COUNT 69
 #define EXTERNAL_TOKEN_COUNT 0
 #define FIELD_COUNT 0
 #define MAX_ALIAS_SEQUENCE_LENGTH 1
@@ -92,7 +92,8 @@ enum {
   anon_sym_any = 65,
   anon_sym_option = 66,
   sym_number = 67,
-  sym_source_file = 68,
+  anon_sym_BQUOTE = 68,
+  sym_source_file = 69,
 };
 
 static const char * const ts_symbol_names[] = {
@@ -164,6 +165,7 @@ static const char * const ts_symbol_names[] = {
   [anon_sym_any] = "any",
   [anon_sym_option] = "option",
   [sym_number] = "number",
+  [anon_sym_BQUOTE] = "`",
   [sym_source_file] = "source_file",
 };
 
@@ -236,6 +238,7 @@ static const TSSymbol ts_symbol_map[] = {
   [anon_sym_any] = anon_sym_any,
   [anon_sym_option] = anon_sym_option,
   [sym_number] = sym_number,
+  [anon_sym_BQUOTE] = anon_sym_BQUOTE,
   [sym_source_file] = sym_source_file,
 };
 
@@ -512,6 +515,10 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .visible = true,
     .named = true,
   },
+  [anon_sym_BQUOTE] = {
+    .visible = true,
+    .named = false,
+  },
   [sym_source_file] = {
     .visible = true,
     .named = true,
@@ -543,6 +550,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if (lookahead == '\'') ADVANCE(568);
       if (lookahead == '0') ADVANCE(86);
       if (lookahead == '<') ADVANCE(87);
+      if (lookahead == '`') ADVANCE(635);
       if (lookahead == 'a') ADVANCE(332);
       if (lookahead == 'l') ADVANCE(88);
       if (lookahead == 'o') ADVANCE(239);
@@ -2515,6 +2523,9 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       ACCEPT_TOKEN(sym_number);
       if (('0' <= lookahead && lookahead <= '9')) ADVANCE(634);
       END_STATE();
+    case 635:
+      ACCEPT_TOKEN(anon_sym_BQUOTE);
+      END_STATE();
     default:
       return false;
   }
@@ -2596,6 +2607,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_any] = ACTIONS(1),
     [anon_sym_option] = ACTIONS(1),
     [sym_number] = ACTIONS(1),
+    [anon_sym_BQUOTE] = ACTIONS(1),
   },
   [1] = {
     [sym_source_file] = STATE(3),

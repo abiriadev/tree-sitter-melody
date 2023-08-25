@@ -23,6 +23,10 @@
         {
           "type": "SYMBOL",
           "name": "quantifier"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "raw"
         }
       ]
     },
@@ -468,6 +472,23 @@
     "number": {
       "type": "PATTERN",
       "value": "[1-9]\\d*"
+    },
+    "raw": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "`"
+        },
+        {
+          "type": "PATTERN",
+          "value": ".*"
+        },
+        {
+          "type": "STRING",
+          "value": "`"
+        }
+      ]
     }
   },
   "extras": [

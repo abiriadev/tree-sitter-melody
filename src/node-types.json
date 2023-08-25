@@ -35,6 +35,10 @@
           "named": true
         },
         {
+          "type": "raw",
+          "named": true
+        },
+        {
           "type": "symbol",
           "named": true
         }
@@ -70,6 +74,11 @@
         }
       ]
     }
+  },
+  {
+    "type": "raw",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "source_file",
@@ -326,6 +335,10 @@
   },
   {
     "type": "<word>",
+    "named": false
+  },
+  {
+    "type": "`",
     "named": false
   },
   {

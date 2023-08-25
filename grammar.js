@@ -10,6 +10,7 @@ module.exports = grammar({
 				$.symbol,
 				$.range,
 				$.quantifier,
+				$.raw,
 			),
 
 		literal: $ =>
@@ -109,5 +110,7 @@ module.exports = grammar({
 			),
 
 		number: $ => /[1-9]\d*/,
+
+		raw: $ => seq('`', /.*/, '`'),
 	},
 })
