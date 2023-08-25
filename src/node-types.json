@@ -5,6 +5,11 @@
     "fields": {}
   },
   {
+    "type": "unicode_category",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "",
     "named": false
   },
@@ -30,6 +35,158 @@
   },
   {
     "type": "<boundary>",
+    "named": false
+  },
+  {
+    "type": "<category::cased_letter>",
+    "named": false
+  },
+  {
+    "type": "<category::close_punctuation>",
+    "named": false
+  },
+  {
+    "type": "<category::connector_punctuation>",
+    "named": false
+  },
+  {
+    "type": "<category::control>",
+    "named": false
+  },
+  {
+    "type": "<category::currency_symbol>",
+    "named": false
+  },
+  {
+    "type": "<category::dash_punctuation>",
+    "named": false
+  },
+  {
+    "type": "<category::decimal_digit_number>",
+    "named": false
+  },
+  {
+    "type": "<category::enclosing_mark>",
+    "named": false
+  },
+  {
+    "type": "<category::final_punctuation>",
+    "named": false
+  },
+  {
+    "type": "<category::format>",
+    "named": false
+  },
+  {
+    "type": "<category::initial_punctuation>",
+    "named": false
+  },
+  {
+    "type": "<category::letter>",
+    "named": false
+  },
+  {
+    "type": "<category::letter_number>",
+    "named": false
+  },
+  {
+    "type": "<category::line_separator>",
+    "named": false
+  },
+  {
+    "type": "<category::lowercase_letter>",
+    "named": false
+  },
+  {
+    "type": "<category::mark>",
+    "named": false
+  },
+  {
+    "type": "<category::math_symbol>",
+    "named": false
+  },
+  {
+    "type": "<category::modifier_letter>",
+    "named": false
+  },
+  {
+    "type": "<category::modifier_symbol>",
+    "named": false
+  },
+  {
+    "type": "<category::non_spacing_mark>",
+    "named": false
+  },
+  {
+    "type": "<category::number>",
+    "named": false
+  },
+  {
+    "type": "<category::open_punctuation>",
+    "named": false
+  },
+  {
+    "type": "<category::other>",
+    "named": false
+  },
+  {
+    "type": "<category::other_letter>",
+    "named": false
+  },
+  {
+    "type": "<category::other_number>",
+    "named": false
+  },
+  {
+    "type": "<category::other_punctuation>",
+    "named": false
+  },
+  {
+    "type": "<category::other_symbol>",
+    "named": false
+  },
+  {
+    "type": "<category::paragraph_separator>",
+    "named": false
+  },
+  {
+    "type": "<category::private_use>",
+    "named": false
+  },
+  {
+    "type": "<category::punctuation>",
+    "named": false
+  },
+  {
+    "type": "<category::separator>",
+    "named": false
+  },
+  {
+    "type": "<category::space_separator>",
+    "named": false
+  },
+  {
+    "type": "<category::spacing_combining_mark>",
+    "named": false
+  },
+  {
+    "type": "<category::surrogate>",
+    "named": false
+  },
+  {
+    "type": "<category::symbol>",
+    "named": false
+  },
+  {
+    "type": "<category::titlecase_letter>",
+    "named": false
+  },
+  {
+    "type": "<category::unassigned>",
+    "named": false
+  },
+  {
+    "type": "<category::uppercase_letter>",
     "named": false
   },
   {

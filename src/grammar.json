@@ -118,6 +118,167 @@
         {
           "type": "STRING",
           "value": "<end>"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "unicode_category"
+        }
+      ]
+    },
+    "unicode_category": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "<category::letter>"
+        },
+        {
+          "type": "STRING",
+          "value": "<category::lowercase_letter>"
+        },
+        {
+          "type": "STRING",
+          "value": "<category::uppercase_letter>"
+        },
+        {
+          "type": "STRING",
+          "value": "<category::titlecase_letter>"
+        },
+        {
+          "type": "STRING",
+          "value": "<category::cased_letter>"
+        },
+        {
+          "type": "STRING",
+          "value": "<category::modifier_letter>"
+        },
+        {
+          "type": "STRING",
+          "value": "<category::other_letter>"
+        },
+        {
+          "type": "STRING",
+          "value": "<category::mark>"
+        },
+        {
+          "type": "STRING",
+          "value": "<category::non_spacing_mark>"
+        },
+        {
+          "type": "STRING",
+          "value": "<category::spacing_combining_mark>"
+        },
+        {
+          "type": "STRING",
+          "value": "<category::enclosing_mark>"
+        },
+        {
+          "type": "STRING",
+          "value": "<category::separator>"
+        },
+        {
+          "type": "STRING",
+          "value": "<category::space_separator>"
+        },
+        {
+          "type": "STRING",
+          "value": "<category::line_separator>"
+        },
+        {
+          "type": "STRING",
+          "value": "<category::paragraph_separator>"
+        },
+        {
+          "type": "STRING",
+          "value": "<category::symbol>"
+        },
+        {
+          "type": "STRING",
+          "value": "<category::math_symbol>"
+        },
+        {
+          "type": "STRING",
+          "value": "<category::currency_symbol>"
+        },
+        {
+          "type": "STRING",
+          "value": "<category::modifier_symbol>"
+        },
+        {
+          "type": "STRING",
+          "value": "<category::other_symbol>"
+        },
+        {
+          "type": "STRING",
+          "value": "<category::number>"
+        },
+        {
+          "type": "STRING",
+          "value": "<category::decimal_digit_number>"
+        },
+        {
+          "type": "STRING",
+          "value": "<category::letter_number>"
+        },
+        {
+          "type": "STRING",
+          "value": "<category::other_number>"
+        },
+        {
+          "type": "STRING",
+          "value": "<category::punctuation>"
+        },
+        {
+          "type": "STRING",
+          "value": "<category::dash_punctuation>"
+        },
+        {
+          "type": "STRING",
+          "value": "<category::open_punctuation>"
+        },
+        {
+          "type": "STRING",
+          "value": "<category::close_punctuation>"
+        },
+        {
+          "type": "STRING",
+          "value": "<category::initial_punctuation>"
+        },
+        {
+          "type": "STRING",
+          "value": "<category::final_punctuation>"
+        },
+        {
+          "type": "STRING",
+          "value": "<category::connector_punctuation>"
+        },
+        {
+          "type": "STRING",
+          "value": "<category::other_punctuation>"
+        },
+        {
+          "type": "STRING",
+          "value": "<category::other>"
+        },
+        {
+          "type": "STRING",
+          "value": "<category::control>"
+        },
+        {
+          "type": "STRING",
+          "value": "<category::format>"
+        },
+        {
+          "type": "STRING",
+          "value": "<category::private_use>"
+        },
+        {
+          "type": "STRING",
+          "value": "<category::surrogate>"
+        },
+        {
+          "type": "STRING",
+          "value": "<category::unassigned>"
         }
       ]
     }
