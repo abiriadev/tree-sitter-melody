@@ -242,7 +242,15 @@
     "named": false
   },
   {
+    "type": "range_character",
+    "named": true
+  },
+  {
     "type": "string",
     "named": true
+  },
+  {
+    "type": "to",
+    "named": false
   }
 ]

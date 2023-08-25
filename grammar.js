@@ -75,5 +75,10 @@ module.exports = grammar({
 				'<category::surrogate>',
 				'<category::unassigned>',
 			),
+
+		range: $ =>
+			seq($.range_character, 'to', $.range_character),
+
+		range_character: $ => /\da-zA-Z/,
 	},
 })

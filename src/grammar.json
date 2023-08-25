@@ -281,6 +281,27 @@
           "value": "<category::unassigned>"
         }
       ]
+    },
+    "range": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "range_character"
+        },
+        {
+          "type": "STRING",
+          "value": "to"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "range_character"
+        }
+      ]
+    },
+    "range_character": {
+      "type": "PATTERN",
+      "value": "\\da-zA-Z"
     }
   },
   "extras": [
