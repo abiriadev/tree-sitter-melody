@@ -5,6 +5,19 @@
       "type": "STRING",
       "value": ""
     },
+    "stmt": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "pattern"
+        },
+        {
+          "type": "STRING",
+          "value": ";"
+        }
+      ]
+    },
     "pattern": {
       "type": "CHOICE",
       "members": [

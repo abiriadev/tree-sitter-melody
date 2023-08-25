@@ -4,6 +4,8 @@ module.exports = grammar({
 	rules: {
 		source_file: $ => '',
 
+		stmt: $ => seq($.pattern, ';'),
+
 		pattern: $ =>
 			choice(
 				$.literal,

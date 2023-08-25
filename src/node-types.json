@@ -133,6 +133,10 @@
     "named": false
   },
   {
+    "type": ";",
+    "named": false
+  },
+  {
     "type": "<alphabetic>",
     "named": false
   },
