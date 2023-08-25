@@ -40,6 +40,10 @@
         {
           "type": "SYMBOL",
           "name": "raw"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "group"
         }
       ]
     },
@@ -570,7 +574,7 @@
           "type": "REPEAT",
           "content": {
             "type": "SYMBOL",
-            "name": "pattern"
+            "name": "stmt"
           }
         },
         {

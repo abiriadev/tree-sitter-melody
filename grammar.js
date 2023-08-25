@@ -13,6 +13,7 @@ module.exports = grammar({
 				$.range,
 				$.quantifier,
 				$.raw,
+				$.group,
 			),
 
 		literal: $ =>
@@ -122,6 +123,6 @@ module.exports = grammar({
 				seq('either', $.block),
 			),
 
-		block: $ => seq('{', repeat($.pattern), '}'),
+		block: $ => seq('{', repeat($.stmt), '}'),
 	},
 })

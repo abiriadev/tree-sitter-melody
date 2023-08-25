@@ -8,7 +8,26 @@
       "required": false,
       "types": [
         {
-          "type": "pattern",
+          "type": "stmt",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "group",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "block",
+          "named": true
+        },
+        {
+          "type": "string",
           "named": true
         }
       ]
@@ -37,6 +56,10 @@
       "multiple": false,
       "required": true,
       "types": [
+        {
+          "type": "group",
+          "named": true
+        },
         {
           "type": "literal",
           "named": true
@@ -99,6 +122,21 @@
     "type": "source_file",
     "named": true,
     "fields": {}
+  },
+  {
+    "type": "stmt",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "pattern",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "symbol",
