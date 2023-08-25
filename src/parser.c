@@ -8,9 +8,9 @@
 #define LANGUAGE_VERSION 14
 #define STATE_COUNT 4
 #define LARGE_STATE_COUNT 2
-#define SYMBOL_COUNT 3
+#define SYMBOL_COUNT 6
 #define ALIAS_COUNT 0
-#define TOKEN_COUNT 2
+#define TOKEN_COUNT 5
 #define EXTERNAL_TOKEN_COUNT 0
 #define FIELD_COUNT 0
 #define MAX_ALIAS_SEQUENCE_LENGTH 1
@@ -18,18 +18,27 @@
 
 enum {
   anon_sym_ = 1,
-  sym_source_file = 2,
+  anon_sym_SQUOTE = 2,
+  anon_sym_DQUOTE = 3,
+  sym_string = 4,
+  sym_source_file = 5,
 };
 
 static const char * const ts_symbol_names[] = {
   [ts_builtin_sym_end] = "end",
   [anon_sym_] = "",
+  [anon_sym_SQUOTE] = "'",
+  [anon_sym_DQUOTE] = "\"",
+  [sym_string] = "string",
   [sym_source_file] = "source_file",
 };
 
 static const TSSymbol ts_symbol_map[] = {
   [ts_builtin_sym_end] = ts_builtin_sym_end,
   [anon_sym_] = anon_sym_,
+  [anon_sym_SQUOTE] = anon_sym_SQUOTE,
+  [anon_sym_DQUOTE] = anon_sym_DQUOTE,
+  [sym_string] = sym_string,
   [sym_source_file] = sym_source_file,
 };
 
@@ -41,6 +50,18 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
   [anon_sym_] = {
     .visible = true,
     .named = false,
+  },
+  [anon_sym_SQUOTE] = {
+    .visible = true,
+    .named = false,
+  },
+  [anon_sym_DQUOTE] = {
+    .visible = true,
+    .named = false,
+  },
+  [sym_string] = {
+    .visible = true,
+    .named = true,
   },
   [sym_source_file] = {
     .visible = true,
@@ -68,11 +89,36 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
   eof = lexer->eof(lexer);
   switch (state) {
     case 0:
-      ACCEPT_TOKEN(anon_sym_);
       if (eof) ADVANCE(1);
+      if (lookahead == '"') ADVANCE(4);
+      if (lookahead == '\'') ADVANCE(3);
+      if (lookahead == '\t' ||
+          lookahead == '\n' ||
+          lookahead == '\r' ||
+          lookahead == ' ') SKIP(0)
+      if (('0' <= lookahead && lookahead <= '9') ||
+          ('A' <= lookahead && lookahead <= 'Z') ||
+          lookahead == '_' ||
+          ('a' <= lookahead && lookahead <= 'z')) ADVANCE(5);
       END_STATE();
     case 1:
       ACCEPT_TOKEN(ts_builtin_sym_end);
+      END_STATE();
+    case 2:
+      ACCEPT_TOKEN(anon_sym_);
+      END_STATE();
+    case 3:
+      ACCEPT_TOKEN(anon_sym_SQUOTE);
+      END_STATE();
+    case 4:
+      ACCEPT_TOKEN(anon_sym_DQUOTE);
+      END_STATE();
+    case 5:
+      ACCEPT_TOKEN(sym_string);
+      if (('0' <= lookahead && lookahead <= '9') ||
+          ('A' <= lookahead && lookahead <= 'Z') ||
+          lookahead == '_' ||
+          ('a' <= lookahead && lookahead <= 'z')) ADVANCE(5);
       END_STATE();
     default:
       return false;
@@ -81,7 +127,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
 
 static const TSLexMode ts_lex_modes[STATE_COUNT] = {
   [0] = {.lex_state = 0},
-  [1] = {.lex_state = 0},
+  [1] = {.lex_state = 2},
   [2] = {.lex_state = 0},
   [3] = {.lex_state = 0},
 };
@@ -89,7 +135,9 @@ static const TSLexMode ts_lex_modes[STATE_COUNT] = {
 static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [0] = {
     [ts_builtin_sym_end] = ACTIONS(1),
-    [anon_sym_] = ACTIONS(1),
+    [anon_sym_SQUOTE] = ACTIONS(1),
+    [anon_sym_DQUOTE] = ACTIONS(1),
+    [sym_string] = ACTIONS(1),
   },
   [1] = {
     [sym_source_file] = STATE(3),

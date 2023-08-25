@@ -3,5 +3,13 @@ module.exports = grammar({
 
 	rules: {
 		source_file: $ => '',
+
+		literal: $ =>
+			choice(
+				seq("'", $.string, "'"),
+				seq('"', $.string, '"'),
+			),
+
+		string: $ => /\w+/,
 	},
 })

@@ -7,5 +7,17 @@
   {
     "type": "",
     "named": false
+  },
+  {
+    "type": "\"",
+    "named": false
+  },
+  {
+    "type": "'",
+    "named": false
+  },
+  {
+    "type": "string",
+    "named": true
   }
 ]
