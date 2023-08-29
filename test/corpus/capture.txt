@@ -1,0 +1,19 @@
+===
+Capture
+===
+
+capture cap {
+	"a";
+}
+
+---
+
+(source_file
+	(stmt
+		(pattern
+			(group
+				(block
+					(stmt
+						(pattern
+							(literal
+								(string)))))))))
