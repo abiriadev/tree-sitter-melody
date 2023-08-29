@@ -116,79 +116,96 @@
       "value": "[^\"']*"
     },
     "symbol": {
-      "type": "CHOICE",
+      "type": "SEQ",
       "members": [
         {
-          "type": "STRING",
-          "value": "<char>"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "not"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
         },
         {
-          "type": "STRING",
-          "value": "<space>"
-        },
-        {
-          "type": "STRING",
-          "value": "<whitespace>"
-        },
-        {
-          "type": "STRING",
-          "value": "<newline>"
-        },
-        {
-          "type": "STRING",
-          "value": "<tab>"
-        },
-        {
-          "type": "STRING",
-          "value": "<return>"
-        },
-        {
-          "type": "STRING",
-          "value": "<feed>"
-        },
-        {
-          "type": "STRING",
-          "value": "<null>"
-        },
-        {
-          "type": "STRING",
-          "value": "<digit>"
-        },
-        {
-          "type": "STRING",
-          "value": "<vertical>"
-        },
-        {
-          "type": "STRING",
-          "value": "<word>"
-        },
-        {
-          "type": "STRING",
-          "value": "<alphabetic>"
-        },
-        {
-          "type": "STRING",
-          "value": "<alphanumeric>"
-        },
-        {
-          "type": "STRING",
-          "value": "<boundary>"
-        },
-        {
-          "type": "STRING",
-          "value": "<backspace>"
-        },
-        {
-          "type": "STRING",
-          "value": "<start>"
-        },
-        {
-          "type": "STRING",
-          "value": "<end>"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "unicode_category"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "<char>"
+            },
+            {
+              "type": "STRING",
+              "value": "<space>"
+            },
+            {
+              "type": "STRING",
+              "value": "<whitespace>"
+            },
+            {
+              "type": "STRING",
+              "value": "<newline>"
+            },
+            {
+              "type": "STRING",
+              "value": "<tab>"
+            },
+            {
+              "type": "STRING",
+              "value": "<return>"
+            },
+            {
+              "type": "STRING",
+              "value": "<feed>"
+            },
+            {
+              "type": "STRING",
+              "value": "<null>"
+            },
+            {
+              "type": "STRING",
+              "value": "<digit>"
+            },
+            {
+              "type": "STRING",
+              "value": "<vertical>"
+            },
+            {
+              "type": "STRING",
+              "value": "<word>"
+            },
+            {
+              "type": "STRING",
+              "value": "<alphabetic>"
+            },
+            {
+              "type": "STRING",
+              "value": "<alphanumeric>"
+            },
+            {
+              "type": "STRING",
+              "value": "<boundary>"
+            },
+            {
+              "type": "STRING",
+              "value": "<backspace>"
+            },
+            {
+              "type": "STRING",
+              "value": "<start>"
+            },
+            {
+              "type": "STRING",
+              "value": "<end>"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "unicode_category"
+            }
+          ]
         }
       ]
     },

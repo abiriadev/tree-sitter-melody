@@ -37,25 +37,28 @@ module.exports = grammar({
 		string: $ => /[^"']*/,
 
 		symbol: $ =>
-			choice(
-				'<char>',
-				'<space>',
-				'<whitespace>',
-				'<newline>',
-				'<tab>',
-				'<return>',
-				'<feed>',
-				'<null>',
-				'<digit>',
-				'<vertical>',
-				'<word>',
-				'<alphabetic>',
-				'<alphanumeric>',
-				'<boundary>',
-				'<backspace>',
-				'<start>', // special symbol
-				'<end>', // special symbol
-				$.unicode_category,
+			seq(
+				optional('not'),
+				choice(
+					'<char>',
+					'<space>',
+					'<whitespace>',
+					'<newline>',
+					'<tab>',
+					'<return>',
+					'<feed>',
+					'<null>',
+					'<digit>',
+					'<vertical>',
+					'<word>',
+					'<alphabetic>',
+					'<alphanumeric>',
+					'<boundary>',
+					'<backspace>',
+					'<start>', // special symbol
+					'<end>', // special symbol
+					$.unicode_category,
+				),
 			),
 
 		unicode_category: $ =>
