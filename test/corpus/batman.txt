@@ -1,0 +1,32 @@
+===
+Batman 
+===
+
+16 of "na";
+2 of match {
+	<space>;
+	"batman";
+}
+
+---
+
+(source_file
+	(stmt
+		(quantifier
+			(number)
+			(pattern
+				(literal
+					(string)))))
+	(stmt
+		(quantifier
+			(number)
+			(pattern
+				(group
+					(block
+						(stmt
+							(pattern
+								(symbol)))
+						(stmt
+							(pattern
+								(literal
+									(string))))))))))
