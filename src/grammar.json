@@ -484,8 +484,8 @@
                   "type": "CHOICE",
                   "members": [
                     {
-                      "type": "SYMBOL",
-                      "name": "string"
+                      "type": "PATTERN",
+                      "value": "\\S+"
                     },
                     {
                       "type": "BLANK"

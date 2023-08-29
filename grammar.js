@@ -127,7 +127,7 @@ module.exports = grammar({
 		group: $ =>
 			seq(
 				choice(
-					seq('capture', optional($.string)),
+					seq('capture', optional(/\S+/)),
 					'match',
 					'either',
 				),
