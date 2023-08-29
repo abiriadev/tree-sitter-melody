@@ -1,0 +1,38 @@
+===
+Var
+===
+
+let .a = {
+	"a";
+	"b";
+}
+
+.a;
+.a;
+    .         a;
+
+---
+
+(source_file
+	(stmt
+		(pattern
+			(variable
+				(identifier)
+				(block
+					(stmt
+						(pattern
+							(literal
+								(string))))
+					(stmt
+						(pattern
+							(literal
+								(string))))))))
+	(stmt
+		(pattern
+			(identifier)))
+	(stmt
+		(pattern
+			(identifier)))
+	(stmt
+		(pattern
+			(identifier))))
