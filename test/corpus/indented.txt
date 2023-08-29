@@ -1,0 +1,32 @@
+===
+Indented
+===
+
+some of match {
+	2 of <space>;
+}
+
+some of <char>;
+";";
+
+---
+
+(source_file
+	(stmt
+		(quantifier
+			(pattern
+				(group
+					(block
+						(stmt
+							(quantifier
+								(number)
+								(pattern
+									(symbol)))))))))
+	(stmt
+		(quantifier
+			(pattern
+				(symbol))))
+	(stmt
+		(pattern
+			(literal
+				(string)))))
