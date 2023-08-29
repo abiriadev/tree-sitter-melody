@@ -1,0 +1,12 @@
+===
+Twitter 
+===
+
+"#";
+some of <word>;
+
+---
+
+(source_file
+	(stmt (pattern (literal (string))))
+	(stmt (qualifier (symbol))))
