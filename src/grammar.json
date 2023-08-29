@@ -113,7 +113,7 @@
     },
     "string": {
       "type": "PATTERN",
-      "value": ".*"
+      "value": "[^\"']*"
     },
     "symbol": {
       "type": "CHOICE",
