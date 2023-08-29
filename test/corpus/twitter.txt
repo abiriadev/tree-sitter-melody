@@ -8,5 +8,11 @@ some of <word>;
 ---
 
 (source_file
-	(stmt (pattern (literal (string))))
-	(stmt (qualifier (symbol))))
+	(stmt
+		(pattern
+			(literal
+				(string))))
+	(stmt
+		(quantifier
+			(pattern
+				(symbol)))))
