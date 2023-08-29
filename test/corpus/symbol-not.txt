@@ -1,0 +1,12 @@
+===
+Symbol NOT
+===
+
+not <whitespace>;
+
+---
+
+(source_file
+	(stmt
+		(pattern
+			(symbol))))
