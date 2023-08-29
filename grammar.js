@@ -34,7 +34,7 @@ module.exports = grammar({
 				seq('"', $.string, '"'),
 			),
 
-		string: $ => /\w+/,
+		string: $ => /.*/,
 
 		symbol: $ =>
 			choice(

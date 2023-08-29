@@ -190,6 +190,11 @@
     }
   },
   {
+    "type": "string",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "symbol",
     "named": true,
     "fields": {},
@@ -543,10 +548,6 @@
   {
     "type": "some",
     "named": false
-  },
-  {
-    "type": "string",
-    "named": true
   },
   {
     "type": "to",

@@ -113,7 +113,7 @@
     },
     "string": {
       "type": "PATTERN",
-      "value": "\\w+"
+      "value": ".*"
     },
     "symbol": {
       "type": "CHOICE",
