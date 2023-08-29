@@ -1,0 +1,28 @@
+===
+Intro
+===
+
+some of <alphabetic>;
+<space>;
+"1";
+2 of <digit>;
+
+---
+
+(source_file
+	(stmt
+		(quantifier
+			(pattern
+				(symbol))))
+	(stmt
+		(pattern
+			(symbol)))
+	(stmt
+		(pattern
+			(literal
+				(string))))
+	(stmt
+		(quantifier
+			(number)
+			(pattern
+				(symbol)))))
