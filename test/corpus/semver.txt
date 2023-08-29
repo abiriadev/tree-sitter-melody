@@ -1,0 +1,72 @@
+===
+Semver
+===
+
+<start>;
+
+option of "v";
+
+capture major {
+	some of <digit>;
+}
+
+".";
+
+capture minor {
+	some of <digit>;
+}
+
+".";
+
+capture patch {
+	some of <digit>;
+}
+
+<end>;
+
+---
+
+(source_file
+	(stmt
+		(pattern
+			(symbol)))
+	(stmt
+		(quantifier
+			(pattern
+				(literal
+					(string)))))
+	(stmt
+		(pattern
+			(group
+				(block
+					(stmt
+						(quantifier
+							(pattern
+								(symbol))))))))
+	(stmt
+		(pattern
+			(literal
+				(string))))
+	(stmt
+		(pattern
+			(group
+				(block
+					(stmt
+						(quantifier
+							(pattern
+								(symbol))))))))
+	(stmt
+		(pattern
+			(literal
+				(string))))
+	(stmt
+		(pattern
+			(group
+				(block
+					(stmt
+						(quantifier
+							(pattern
+								(symbol))))))))
+	(stmt
+		(pattern
+			(symbol))))
