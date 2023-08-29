@@ -1,0 +1,19 @@
+===
+Assert NOT
+===
+
+not ahead {
+	"a";
+}
+
+---
+
+(source_file
+	(stmt
+		(pattern
+			(assertion
+				(block
+					(stmt
+						(pattern
+							(literal
+								(string)))))))))
