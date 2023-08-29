@@ -1,0 +1,20 @@
+===
+Option of
+===
+
+option of "a";
+option of "b";
+
+---
+
+(source_file
+	(stmt
+		(quantifier
+			(pattern
+				(literal
+					(string)))))
+	(stmt
+		(quantifier
+			(pattern
+				(literal
+					(string))))))
