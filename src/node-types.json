@@ -54,6 +54,11 @@
     }
   },
   {
+    "type": "identifier",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "literal",
     "named": true,
     "fields": {},
@@ -233,6 +238,10 @@
   },
   {
     "type": "*/",
+    "named": false
+  },
+  {
+    "type": ".",
     "named": false
   },
   {
@@ -494,10 +503,6 @@
   {
     "type": "either",
     "named": false
-  },
-  {
-    "type": "identifier",
-    "named": true
   },
   {
     "type": "lazy",

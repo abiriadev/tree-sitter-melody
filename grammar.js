@@ -125,19 +125,20 @@ module.exports = grammar({
 		raw: $ => seq('`', /.*/, '`'),
 
 		group: $ =>
-			choice(
-				seq('capture', optional($.string), $.block),
-				seq('match', $.block),
-				seq('either', $.block),
+			seq(
+				choice(
+					seq('capture', optional($.string)),
+					'match',
+					'either',
+				),
+				$.block,
 			),
 
 		assertion: $ =>
 			seq(
 				optional('not'),
-				choice(
-					seq('ahead', $.block),
-					seq('behind', $.block),
-				),
+				choice('ahead', 'behind'),
+				$.block,
 			),
 
 		block: $ => seq('{', repeat($.stmt), '}'),
@@ -148,6 +149,6 @@ module.exports = grammar({
 		variable: $ =>
 			seq('let', $.identifier, '=', $.block),
 
-		identifier: $ => /\.\w+/,
+		identifier: $ => seq('.', /\.\w+/),
 	},
 })
