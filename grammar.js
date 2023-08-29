@@ -149,6 +149,6 @@ module.exports = grammar({
 		variable: $ =>
 			seq('let', $.identifier, '=', $.block),
 
-		identifier: $ => seq('.', /\.\w+/),
+		identifier: $ => seq('.', /\w+/),
 	},
 })
