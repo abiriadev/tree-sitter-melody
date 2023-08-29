@@ -9,18 +9,23 @@ module.exports = grammar({
 	rules: {
 		source_file: $ => repeat($.stmt),
 
-		stmt: $ => seq($.pattern, ';'),
+		stmt: $ => choice($.pattern, $.quantifier),
 
 		pattern: $ =>
 			choice(
-				$.literal,
-				$.symbol,
-				$.range,
-				$.quantifier,
-				$.raw,
+				seq(
+					choice(
+						$.literal,
+						$.range,
+						$.symbol,
+						$.raw,
+						$.identifier,
+					),
+					';',
+				),
 				$.group,
+				$.variable,
 				$.assertion,
-				$.identifier,
 			),
 
 		literal: $ =>

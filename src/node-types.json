@@ -93,10 +93,6 @@
           "named": true
         },
         {
-          "type": "quantifier",
-          "named": true
-        },
-        {
           "type": "range",
           "named": true
         },
@@ -106,6 +102,10 @@
         },
         {
           "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "variable",
           "named": true
         }
       ]
@@ -176,6 +176,10 @@
         {
           "type": "pattern",
           "named": true
+        },
+        {
+          "type": "quantifier",
+          "named": true
         }
       ]
     }
@@ -199,6 +203,25 @@
     "type": "unicode_category",
     "named": true,
     "fields": {}
+  },
+  {
+    "type": "variable",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "block",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "\"",

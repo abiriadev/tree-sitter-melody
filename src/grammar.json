@@ -9,15 +9,15 @@
       }
     },
     "stmt": {
-      "type": "SEQ",
+      "type": "CHOICE",
       "members": [
         {
           "type": "SYMBOL",
           "name": "pattern"
         },
         {
-          "type": "STRING",
-          "value": ";"
+          "type": "SYMBOL",
+          "name": "quantifier"
         }
       ]
     },
@@ -25,24 +25,38 @@
       "type": "CHOICE",
       "members": [
         {
-          "type": "SYMBOL",
-          "name": "literal"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "symbol"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "range"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "quantifier"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "raw"
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "literal"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "range"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "symbol"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "raw"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "identifier"
+                }
+              ]
+            },
+            {
+              "type": "STRING",
+              "value": ";"
+            }
+          ]
         },
         {
           "type": "SYMBOL",
@@ -50,11 +64,11 @@
         },
         {
           "type": "SYMBOL",
-          "name": "assertion"
+          "name": "variable"
         },
         {
           "type": "SYMBOL",
-          "name": "identifier"
+          "name": "assertion"
         }
       ]
     },
@@ -375,21 +389,8 @@
           "type": "CHOICE",
           "members": [
             {
-              "type": "SEQ",
-              "members": [
-                {
-                  "type": "SYMBOL",
-                  "name": "number"
-                },
-                {
-                  "type": "STRING",
-                  "value": "of"
-                },
-                {
-                  "type": "SYMBOL",
-                  "name": "pattern"
-                }
-              ]
+              "type": "SYMBOL",
+              "name": "number"
             },
             {
               "type": "SEQ",
@@ -405,14 +406,6 @@
                 {
                   "type": "SYMBOL",
                   "name": "number"
-                },
-                {
-                  "type": "STRING",
-                  "value": "of"
-                },
-                {
-                  "type": "SYMBOL",
-                  "name": "pattern"
                 }
               ]
             },
@@ -426,69 +419,30 @@
                 {
                   "type": "SYMBOL",
                   "name": "number"
-                },
-                {
-                  "type": "STRING",
-                  "value": "of"
-                },
-                {
-                  "type": "SYMBOL",
-                  "name": "pattern"
                 }
               ]
             },
             {
-              "type": "SEQ",
-              "members": [
-                {
-                  "type": "STRING",
-                  "value": "some"
-                },
-                {
-                  "type": "STRING",
-                  "value": "of"
-                },
-                {
-                  "type": "SYMBOL",
-                  "name": "pattern"
-                }
-              ]
+              "type": "STRING",
+              "value": "some"
             },
             {
-              "type": "SEQ",
-              "members": [
-                {
-                  "type": "STRING",
-                  "value": "any"
-                },
-                {
-                  "type": "STRING",
-                  "value": "of"
-                },
-                {
-                  "type": "SYMBOL",
-                  "name": "pattern"
-                }
-              ]
+              "type": "STRING",
+              "value": "any"
             },
             {
-              "type": "SEQ",
-              "members": [
-                {
-                  "type": "STRING",
-                  "value": "option"
-                },
-                {
-                  "type": "STRING",
-                  "value": "of"
-                },
-                {
-                  "type": "SYMBOL",
-                  "name": "pattern"
-                }
-              ]
+              "type": "STRING",
+              "value": "option"
             }
           ]
+        },
+        {
+          "type": "STRING",
+          "value": "of"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "pattern"
         }
       ]
     },
