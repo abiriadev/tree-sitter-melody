@@ -148,7 +148,10 @@ module.exports = grammar({
 		block: $ => seq('{', repeat($.stmt), '}'),
 
 		comment: $ =>
-			choice(seq('//', /.*/), seq('/*', /.*/, '*/')),
+			choice(
+				seq('//', /.*/),
+				seq('/*', /[^*]*\*+([^/*][^*]*\*+)*/, '/'),
+			),
 
 		variable: $ =>
 			seq('let', $.identifier, '=', $.block),
