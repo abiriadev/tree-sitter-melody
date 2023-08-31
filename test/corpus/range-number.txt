@@ -1,0 +1,14 @@
+===
+Number Range
+===
+
+3 to 2;
+
+---
+
+(source_file
+	(stmt
+		(pattern
+			(range
+				(number)
+				(number)))))

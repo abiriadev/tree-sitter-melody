@@ -104,9 +104,10 @@ module.exports = grammar({
 			),
 
 		range: $ =>
-			seq($.range_character, 'to', $.range_character),
-
-		range_character: $ => /\da-zA-Z/,
+			choice(
+				seq(/[a-z]/, 'to', /[a-z]/),
+				seq($.number, 'to', $.number),
+			),
 
 		quantifier: $ =>
 			seq(

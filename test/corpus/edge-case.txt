@@ -1,0 +1,22 @@
+===
+Edge Case
+===
+
+match {
+	1 to 4 of "a";
+}
+
+---
+
+(source_file
+	(stmt
+		(pattern
+			(group
+				(block
+					(stmt
+						(quantifier
+							(number)
+							(number)
+							(pattern
+								(literal
+									(string))))))))))

@@ -137,10 +137,10 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": true,
+      "required": false,
       "types": [
         {
-          "type": "range_character",
+          "type": "number",
           "named": true
         }
       ]
@@ -531,10 +531,6 @@
   {
     "type": "over",
     "named": false
-  },
-  {
-    "type": "range_character",
-    "named": true
   },
   {
     "type": "some",

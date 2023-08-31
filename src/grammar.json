@@ -367,25 +367,43 @@
       ]
     },
     "range": {
-      "type": "SEQ",
+      "type": "CHOICE",
       "members": [
         {
-          "type": "SYMBOL",
-          "name": "range_character"
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "PATTERN",
+              "value": "[a-z]"
+            },
+            {
+              "type": "STRING",
+              "value": "to"
+            },
+            {
+              "type": "PATTERN",
+              "value": "[a-z]"
+            }
+          ]
         },
         {
-          "type": "STRING",
-          "value": "to"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "range_character"
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "number"
+            },
+            {
+              "type": "STRING",
+              "value": "to"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "number"
+            }
+          ]
         }
       ]
-    },
-    "range_character": {
-      "type": "PATTERN",
-      "value": "\\da-zA-Z"
     },
     "quantifier": {
       "type": "SEQ",
