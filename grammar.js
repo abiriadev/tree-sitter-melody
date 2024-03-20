@@ -68,7 +68,7 @@ module.exports = grammar({
 	extras: $ => [/\s/, $.comment],
 
 	rules: {
-		source_file: $ => repeat($._statement),
+		source_file: $ => repeat($.range),
 
 		_statement: $ => choice($.expression, $.quantifier),
 
@@ -126,9 +126,9 @@ module.exports = grammar({
 				),
 				seq(
 					optional('not'),
-					/[\u0000-\u007f]/,
+					/[a-zA-Z]/,
 					'to',
-					/[\u0000-\u007f]/,
+					/[a-zA-Z]/,
 				),
 			),
 
