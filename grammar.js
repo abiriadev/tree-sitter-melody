@@ -1,6 +1,67 @@
 /// <reference types="tree-sitter-cli/dsl" />
 // @ts-check
 
+const valid_symbol_names = [
+	'<char>',
+	'<space>',
+	'<whitespace>',
+	'<newline>',
+	'<tab>',
+	'<return>',
+	'<feed>',
+	'<null>',
+	'<digit>',
+	'<vertical>',
+	'<word>',
+	'<alphabetic>',
+	'<alphanumeric>',
+	'<boundary>',
+	'<backspace>',
+	'<start>', // special symbol
+	'<end>', // special symbol
+]
+
+const valid_unicode_categories = [
+	'<category::letter>',
+	'<category::lowercase_letter>',
+	'<category::uppercase_letter>',
+	'<category::titlecase_letter>',
+	'<category::cased_letter>',
+	'<category::modifier_letter>',
+	'<category::other_letter>',
+	'<category::mark>',
+	'<category::non_spacing_mark>',
+	'<category::spacing_combining_mark>',
+	'<category::enclosing_mark>',
+	'<category::separator>',
+	'<category::space_separator>',
+	'<category::line_separator>',
+	'<category::paragraph_separator>',
+	'<category::symbol>',
+	'<category::math_symbol>',
+	'<category::currency_symbol>',
+	'<category::modifier_symbol>',
+	'<category::other_symbol>',
+	'<category::number>',
+	'<category::decimal_digit_number>',
+	'<category::letter_number>',
+	'<category::other_number>',
+	'<category::punctuation>',
+	'<category::dash_punctuation>',
+	'<category::open_punctuation>',
+	'<category::close_punctuation>',
+	'<category::initial_punctuation>',
+	'<category::final_punctuation>',
+	'<category::connector_punctuation>',
+	'<category::other_punctuation>',
+	'<category::other>',
+	'<category::control>',
+	'<category::format>',
+	'<category::private_use>',
+	'<category::surrogate>',
+	'<category::unassigned>',
+]
+
 module.exports = grammar({
 	name: 'melody',
 
@@ -73,72 +134,16 @@ module.exports = grammar({
 				),
 			),
 
-		symbol: $ =>
-			seq(
-				optional('not'),
-				choice(
-					'<char>',
-					'<space>',
-					'<whitespace>',
-					'<newline>',
-					'<tab>',
-					'<return>',
-					'<feed>',
-					'<null>',
-					'<digit>',
-					'<vertical>',
-					'<word>',
-					'<alphabetic>',
-					'<alphanumeric>',
-					'<boundary>',
-					'<backspace>',
-					'<start>', // special symbol
-					'<end>', // special symbol
-					$.unicode_category,
-				),
+		symbol: $ => seq(optional('not'), $.valid_symbol),
+
+		valid_symbol: $ =>
+			choice(
+				...valid_symbol_names,
+				$.unicode_category,
 			),
 
 		unicode_category: _ =>
-			choice(
-				'<category::letter>',
-				'<category::lowercase_letter>',
-				'<category::uppercase_letter>',
-				'<category::titlecase_letter>',
-				'<category::cased_letter>',
-				'<category::modifier_letter>',
-				'<category::other_letter>',
-				'<category::mark>',
-				'<category::non_spacing_mark>',
-				'<category::spacing_combining_mark>',
-				'<category::enclosing_mark>',
-				'<category::separator>',
-				'<category::space_separator>',
-				'<category::line_separator>',
-				'<category::paragraph_separator>',
-				'<category::symbol>',
-				'<category::math_symbol>',
-				'<category::currency_symbol>',
-				'<category::modifier_symbol>',
-				'<category::other_symbol>',
-				'<category::number>',
-				'<category::decimal_digit_number>',
-				'<category::letter_number>',
-				'<category::other_number>',
-				'<category::punctuation>',
-				'<category::dash_punctuation>',
-				'<category::open_punctuation>',
-				'<category::close_punctuation>',
-				'<category::initial_punctuation>',
-				'<category::final_punctuation>',
-				'<category::connector_punctuation>',
-				'<category::other_punctuation>',
-				'<category::other>',
-				'<category::control>',
-				'<category::format>',
-				'<category::private_use>',
-				'<category::surrogate>',
-				'<category::unassigned>',
-			),
+			choice(...valid_unicode_categories),
 
 		raw: _ => /`([^`]|\\[`\\])*`/,
 
