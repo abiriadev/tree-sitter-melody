@@ -47,7 +47,7 @@ module.exports = grammar({
 				$.assertion,
 			),
 
-		literal: $ =>
+		literal: _ =>
 			choice(
 				/"([^\\"]|\\["\\/bfnrt]|\\u[\da-fA-F]{4})*"/,
 				/'([^\\']|\\['\\/bfnrt]|\\u[\da-fA-F]{4})*'/,
@@ -94,7 +94,7 @@ module.exports = grammar({
 				),
 			),
 
-		unicode_category: $ =>
+		unicode_category: _ =>
 			choice(
 				'<category::letter>',
 				'<category::lowercase_letter>',
@@ -136,9 +136,9 @@ module.exports = grammar({
 				'<category::unassigned>',
 			),
 
-		raw: $ => /`([^`]|\\[`\\])*`/,
+		raw: _ => /`([^`]|\\[`\\])*`/,
 
-		negative_char_class: $ =>
+		negative_char_class: _ =>
 			seq('not', /[\da-zA-Z_\\@*$#&^!%]+/),
 
 		variable: $ => seq('.', $.identifier),
