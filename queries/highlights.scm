@@ -14,6 +14,6 @@
 "to" @keyword
 (amount) @number
 (literal) @string
-(symbol) @constant.builtin
+(valid_symbol) @constant.builtin
 (comment) @comment
 (semicolon) @punctuation.delimiter
