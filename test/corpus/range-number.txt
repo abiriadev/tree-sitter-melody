@@ -7,8 +7,7 @@ Number Range
 ---
 
 (source_file
-	(stmt
-		(pattern
-			(range
-				(number)
-				(number)))))
+	(expression
+		(range
+			(amount)
+			(amount))))
