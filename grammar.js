@@ -89,7 +89,7 @@ module.exports = grammar({
 
 		amount: _ => /\d+/,
 
-		atom: $ =>
+		_atom: $ =>
 			seq(
 				choice(
 					$.literal,
@@ -104,7 +104,7 @@ module.exports = grammar({
 
 		expression: $ =>
 			choice(
-				$.atom,
+				$._atom,
 				$.group,
 				$.variable_declaration,
 				$.assertion,
