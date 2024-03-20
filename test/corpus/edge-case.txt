@@ -9,11 +9,12 @@ match {
 ---
 
 (source_file
-	(expression
-		(group
-			(block
-				(quantifier
-					(amount)
-					(amount)
-					(expression
-						(literal)))))))
+  (expression
+    (group
+      (block
+        (quantifier
+          (amount)
+          (amount)
+          (expression
+            (atom
+              (literal))))))))

@@ -8,9 +8,11 @@ option of "b";
 ---
 
 (source_file
-	(quantifier
-		(expression
-			(literal)))
-	(quantifier
-		(expression
-			(literal))))
+  (quantifier
+    (expression
+      (atom
+        (literal))))
+  (quantifier
+    (expression
+      (atom
+        (literal)))))

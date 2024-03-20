@@ -1,5 +1,5 @@
 ===
-Twitter 
+Twitter
 ===
 
 "#";
@@ -7,8 +7,10 @@ some of <word>;
 ---
 
 (source_file
-	(expression
-		(literal))
-	(quantifier
-		(expression
-			(symbol))))
+  (expression
+    (atom
+      (literal)))
+  (quantifier
+    (expression
+      (atom
+        (symbol)))))

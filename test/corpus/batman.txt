@@ -1,5 +1,5 @@
 ===
-Batman 
+Batman
 ===
 
 16 of "na";
@@ -11,16 +11,19 @@ Batman
 ---
 
 (source_file
-	(quantifier
-		(amount)
-		(expression
-			(literal)))
-	(quantifier
-		(amount)
-		(expression
-			(group
-				(block
-					(expression
-						(symbol))
-					(expression
-						(literal)))))))
+  (quantifier
+    (amount)
+    (expression
+      (atom
+        (literal))))
+  (quantifier
+    (amount)
+    (expression
+      (group
+        (block
+          (expression
+            (atom
+              (symbol)))
+          (expression
+            (atom
+              (literal))))))))

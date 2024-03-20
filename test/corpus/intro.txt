@@ -10,14 +10,18 @@ some of <alphabetic>;
 ---
 
 (source_file
-	(quantifier
-		(expression
-			(symbol)))
-		(expression
-			(symbol))
-		(expression
-			(literal))
-			(quantifier
-				(amount)
-				(expression
-					(symbol))))
+  (quantifier
+    (expression
+      (atom
+        (symbol))))
+  (expression
+    (atom
+      (symbol)))
+  (expression
+    (atom
+      (literal)))
+  (quantifier
+    (amount)
+    (expression
+      (atom
+        (symbol)))))

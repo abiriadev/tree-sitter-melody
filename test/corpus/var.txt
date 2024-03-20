@@ -14,21 +14,26 @@ let .a = {
 ---
 
 (source_file
-	(expression
-		(variable_declaration
-			(variable
-				(identifier))
-			(block
-				(expression
-					(literal))
-				(expression
-					(literal)))))
-	(expression
-		(variable
-			(identifier)))
-	(expression
-		(variable
-			(identifier)))
-	(expression
-		(variable
-			(identifier))))
+  (expression
+    (variable_declaration
+      (variable
+        (identifier))
+      (block
+        (expression
+          (atom
+            (literal)))
+        (expression
+          (atom
+            (literal))))))
+  (expression
+    (atom
+      (variable
+        (identifier))))
+  (expression
+    (atom
+      (variable
+        (identifier))))
+  (expression
+    (atom
+      (variable
+        (identifier)))))

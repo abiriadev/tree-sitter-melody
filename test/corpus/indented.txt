@@ -12,16 +12,19 @@ some of <char>;
 ---
 
 (source_file
-	(quantifier
-		(expression
-			(group
-				(block
-					(quantifier
-						(amount)
-						(expression
-							(symbol)))))))
-	(quantifier
-		(expression
-			(symbol)))
-	(expression
-		(literal)))
+  (quantifier
+    (expression
+      (group
+        (block
+          (quantifier
+            (amount)
+            (expression
+              (atom
+                (symbol))))))))
+  (quantifier
+    (expression
+      (atom
+        (symbol))))
+  (expression
+    (atom
+      (literal))))

@@ -9,9 +9,10 @@ capture cap {
 ---
 
 (source_file
-	(expression
-		(group
-			(identifier)
-			(block
-				(expression
-					(literal))))))
+  (expression
+    (group
+      (identifier)
+      (block
+        (expression
+          (atom
+            (literal)))))))

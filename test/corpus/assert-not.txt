@@ -9,8 +9,9 @@ not ahead {
 ---
 
 (source_file
-	(expression
-		(assertion
-			(block
-				(expression
-					(literal))))))
+  (expression
+    (assertion
+      (block
+        (expression
+          (atom
+            (literal)))))))
