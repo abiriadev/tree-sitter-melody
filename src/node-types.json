@@ -20,57 +20,17 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "stmt",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "comment",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "group",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
       "required": true,
       "types": [
         {
-          "type": "block",
+          "type": "statement",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "identifier",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "literal",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "string",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "pattern",
+    "type": "expression",
     "named": true,
     "fields": {},
     "children": {
@@ -86,11 +46,11 @@
           "named": true
         },
         {
-          "type": "identifier",
+          "type": "literal",
           "named": true
         },
         {
-          "type": "literal",
+          "type": "negative_char_class",
           "named": true
         },
         {
@@ -108,9 +68,42 @@
         {
           "type": "variable",
           "named": true
+        },
+        {
+          "type": "variable_declaration",
+          "named": true
         }
       ]
     }
+  },
+  {
+    "type": "group",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "block",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "literal",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "negative_char_class",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "quantifier",
@@ -121,11 +114,11 @@
       "required": true,
       "types": [
         {
-          "type": "number",
+          "type": "amount",
           "named": true
         },
         {
-          "type": "pattern",
+          "type": "expression",
           "named": true
         }
       ]
@@ -140,16 +133,11 @@
       "required": false,
       "types": [
         {
-          "type": "number",
+          "type": "amount",
           "named": true
         }
       ]
     }
-  },
-  {
-    "type": "raw",
-    "named": true,
-    "fields": {}
   },
   {
     "type": "source_file",
@@ -160,14 +148,14 @@
       "required": false,
       "types": [
         {
-          "type": "stmt",
+          "type": "statement",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "stmt",
+    "type": "statement",
     "named": true,
     "fields": {},
     "children": {
@@ -175,7 +163,7 @@
       "required": true,
       "types": [
         {
-          "type": "pattern",
+          "type": "expression",
           "named": true
         },
         {
@@ -210,13 +198,9 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
-        {
-          "type": "block",
-          "named": true
-        },
         {
           "type": "identifier",
           "named": true
@@ -225,27 +209,26 @@
     }
   },
   {
-    "type": "\"",
-    "named": false
-  },
-  {
-    "type": "'",
-    "named": false
-  },
-  {
-    "type": "*/",
-    "named": false
+    "type": "variable_declaration",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "block",
+          "named": true
+        },
+        {
+          "type": "variable",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": ".",
-    "named": false
-  },
-  {
-    "type": "/*",
-    "named": false
-  },
-  {
-    "type": "//",
     "named": false
   },
   {
@@ -477,12 +460,12 @@
     "named": false
   },
   {
-    "type": "`",
+    "type": "ahead",
     "named": false
   },
   {
-    "type": "ahead",
-    "named": false
+    "type": "amount",
+    "named": true
   },
   {
     "type": "any",
@@ -497,8 +480,16 @@
     "named": false
   },
   {
+    "type": "comment",
+    "named": true
+  },
+  {
     "type": "either",
     "named": false
+  },
+  {
+    "type": "identifier",
+    "named": true
   },
   {
     "type": "lazy",
@@ -517,10 +508,6 @@
     "named": false
   },
   {
-    "type": "number",
-    "named": true
-  },
-  {
     "type": "of",
     "named": false
   },
@@ -533,12 +520,12 @@
     "named": false
   },
   {
-    "type": "some",
-    "named": false
+    "type": "raw",
+    "named": true
   },
   {
-    "type": "string",
-    "named": true
+    "type": "some",
+    "named": false
   },
   {
     "type": "to",
