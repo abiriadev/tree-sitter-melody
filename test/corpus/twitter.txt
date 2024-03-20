@@ -4,15 +4,13 @@ Twitter
 
 "#";
 some of <word>;
-
 ---
 
 (source_file
-	(stmt
-		(pattern
-			(literal
-				(string))))
-	(stmt
+	(statement
+		(expression
+			(literal)))
+	(statement
 		(quantifier
-			(pattern
+			(expression
 				(symbol)))))
