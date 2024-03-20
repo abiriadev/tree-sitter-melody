@@ -68,7 +68,7 @@ module.exports = grammar({
 	extras: $ => [/\s/, $.comment],
 
 	rules: {
-		source_file: $ => repeat($.range),
+		source_file: $ => repeat($._statement),
 
 		_statement: $ => choice($.expression, $.quantifier),
 
