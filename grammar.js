@@ -7,34 +7,70 @@ module.exports = grammar({
 	extras: $ => [/\s/, $.comment],
 
 	rules: {
-		source_file: $ => repeat($.stmt),
+		source_file: $ => repeat($.statement),
 
-		stmt: $ => choice($.pattern, $.quantifier),
+		statement: $ => choice($.expression, $.quantifier),
 
-		pattern: $ =>
+		quantifier: $ =>
+			seq(
+				optional('lazy'),
+				choice(
+					seq($.amount, 'to', $.amount),
+					$.amount,
+					'some',
+					'any',
+					seq('over', $.amount),
+					'option',
+				),
+				'of',
+				$.expression,
+			),
+
+		amount: $ => /\d+/,
+
+		expression: $ =>
 			choice(
 				seq(
+					// atom
 					choice(
 						$.literal,
 						$.range,
 						$.symbol,
 						$.raw,
-						$.identifier,
+						$.negative_char_class,
+						$.variable,
 					),
 					';',
 				),
 				$.group,
-				$.variable,
+				$.variable_declaration,
 				$.assertion,
 			),
 
 		literal: $ =>
 			choice(
-				seq("'", $.string, "'"),
-				seq('"', $.string, '"'),
+				/"([^\\"]|\\["\\/bfnrt]|\\u[\da-fA-F]{4})*"/,
+				/'([^\\']|\\['\\/bfnrt]|\\u[\da-fA-F]{4})*'/,
 			),
 
-		string: $ => /[^"']*/,
+		range: $ =>
+			choice(
+				seq(
+					optional('not'),
+					$.amount,
+					'to',
+					$.amount,
+				),
+				seq(
+					optional('not'),
+					// TODO: use ascii range instead
+					// /[\u0000-\u007f]/,
+					/[\da-zA-Z]/,
+					'to',
+					// /[\u0000-\u007f]/,
+					/[\da-zA-Z]/,
+				),
+			),
 
 		symbol: $ =>
 			seq(
@@ -103,40 +139,29 @@ module.exports = grammar({
 				'<category::unassigned>',
 			),
 
-		range: $ =>
-			choice(
-				seq(/[a-z]/, 'to', /[a-z]/),
-				seq($.number, 'to', $.number),
-			),
+		raw: $ => /`([^`]|\\[`\\])*`/,
 
-		quantifier: $ =>
-			seq(
-				optional('lazy'),
-				choice(
-					$.number,
-					seq($.number, 'to', $.number),
-					seq('over', $.number),
-					'some',
-					'any',
-					'option',
-				),
-				'of',
-				$.pattern,
-			),
+		negative_char_class: $ =>
+			seq('not', /[\da-zA-Z_\\@*$#&^!%]+/),
 
-		number: $ => /[1-9]\d*/,
+		variable: $ => seq('.', $.identifier),
 
-		raw: $ => seq('`', /.*/, '`'),
+		identifier: $ => /[a-zA-Z_]+/,
 
 		group: $ =>
 			seq(
 				choice(
-					seq('capture', optional(/\S+/)),
+					seq('capture', optional($.identifier)),
 					'match',
 					'either',
 				),
 				$.block,
 			),
+
+		block: $ => seq('{', repeat($.statement), '}'),
+
+		variable_declaration: $ =>
+			seq('let', $.variable, '=', $.block),
 
 		assertion: $ =>
 			seq(
@@ -145,17 +170,16 @@ module.exports = grammar({
 				$.block,
 			),
 
-		block: $ => seq('{', repeat($.stmt), '}'),
-
 		comment: $ =>
-			choice(
-				seq('//', /.*/),
-				seq('/*', /[^*]*\*+([^/*][^*]*\*+)*/, '/'),
+			token(
+				choice(
+					seq('//', /.*/),
+					seq(
+						'/*',
+						/[^*]*\*+([^/*][^*]*\*+)*/,
+						'/',
+					),
+				),
 			),
-
-		variable: $ =>
-			seq('let', $.identifier, '=', $.block),
-
-		identifier: $ => seq('.', /\w+/),
 	},
 })
