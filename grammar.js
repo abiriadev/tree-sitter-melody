@@ -89,8 +89,6 @@ module.exports = grammar({
 
 		amount: _ => /\d+/,
 
-		semicolon: _ => ';',
-
 		atom: $ =>
 			seq(
 				choice(
@@ -101,7 +99,7 @@ module.exports = grammar({
 					$.negative_char_class,
 					$.variable,
 				),
-				$.semicolon,
+				field('semicolon', ';'),
 			),
 
 		expression: $ =>
