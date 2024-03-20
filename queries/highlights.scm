@@ -16,6 +16,6 @@
 (literal) @string
 (symbol) @constant.builtin
 (comment) @comment
-(expression semicolon: ";") @punctuation.delimiter
+(atom semicolon: ";") @punctuation.delimiter
 (block open: "{" @punctuation.bracket)
 (block close: "}" @punctuation.bracket)
