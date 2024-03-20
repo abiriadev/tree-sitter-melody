@@ -28,20 +28,24 @@ module.exports = grammar({
 
 		amount: _ => /\d+/,
 
+		semicolon: _ => ';',
+
+		atom: $ =>
+			seq(
+				choice(
+					$.literal,
+					$.range,
+					$.symbol,
+					$.raw,
+					$.negative_char_class,
+					$.variable,
+				),
+				$.semicolon,
+			),
+
 		expression: $ =>
 			choice(
-				seq(
-					// atom
-					choice(
-						$.literal,
-						$.range,
-						$.symbol,
-						$.raw,
-						$.negative_char_class,
-						$.variable,
-					),
-					';',
-				),
+				$.atom,
 				$.group,
 				$.variable_declaration,
 				$.assertion,
