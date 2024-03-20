@@ -19,3 +19,6 @@
 (atom semicolon: ";") @punctuation.delimiter
 (block open: "{" @punctuation.bracket)
 (block close: "}" @punctuation.bracket)
+(variable) @variable
+(identifier) @variable
+(raw) @string.special
