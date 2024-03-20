@@ -164,7 +164,12 @@ module.exports = grammar({
 				$.block,
 			),
 
-		block: $ => seq('{', repeat1($.statement), '}'),
+		block: $ =>
+			seq(
+				field('open', '{'),
+				repeat1($.statement),
+				field('close', '}'),
+			),
 
 		variable_declaration: $ =>
 			seq('let', $.variable, '=', $.block),
