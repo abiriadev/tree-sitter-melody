@@ -101,7 +101,7 @@
       "type": "PATTERN",
       "value": "\\d+"
     },
-    "_atom": {
+    "atom": {
       "type": "SEQ",
       "members": [
         {
@@ -165,7 +165,7 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "_atom"
+          "name": "atom"
         },
         {
           "type": "SYMBOL",

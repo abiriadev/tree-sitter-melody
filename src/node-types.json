@@ -15,6 +15,52 @@
     }
   },
   {
+    "type": "atom",
+    "named": true,
+    "fields": {
+      "semicolon": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": ";",
+            "named": false
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "literal",
+          "named": true
+        },
+        {
+          "type": "negative_char_class",
+          "named": true
+        },
+        {
+          "type": "range",
+          "named": true
+        },
+        {
+          "type": "raw",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "variable",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "block",
     "named": true,
     "fields": {
@@ -57,18 +103,7 @@
   {
     "type": "expression",
     "named": true,
-    "fields": {
-      "semicolon": {
-        "multiple": false,
-        "required": false,
-        "types": [
-          {
-            "type": ";",
-            "named": false
-          }
-        ]
-      }
-    },
+    "fields": {},
     "children": {
       "multiple": false,
       "required": true,
@@ -78,31 +113,11 @@
           "named": true
         },
         {
+          "type": "atom",
+          "named": true
+        },
+        {
           "type": "group",
-          "named": true
-        },
-        {
-          "type": "literal",
-          "named": true
-        },
-        {
-          "type": "negative_char_class",
-          "named": true
-        },
-        {
-          "type": "range",
-          "named": true
-        },
-        {
-          "type": "raw",
-          "named": true
-        },
-        {
-          "type": "symbol",
-          "named": true
-        },
-        {
-          "type": "variable",
           "named": true
         },
         {
