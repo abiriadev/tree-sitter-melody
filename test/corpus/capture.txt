@@ -9,11 +9,9 @@ capture cap {
 ---
 
 (source_file
-	(stmt
-		(pattern
-			(group
-				(block
-					(stmt
-						(pattern
-							(literal
-								(string)))))))))
+	(expression
+		(group
+			(identifier)
+			(block
+				(expression
+					(literal))))))
