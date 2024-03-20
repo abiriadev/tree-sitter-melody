@@ -16,3 +16,4 @@
 (literal) @string
 (symbol) @constant.builtin
 (comment) @comment
+(semicolon) @punctuation.delimiter
