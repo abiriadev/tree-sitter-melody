@@ -170,7 +170,7 @@ module.exports = grammar({
 				$.block,
 			),
 
-		comment: $ =>
+		comment: _ =>
 			token(
 				choice(
 					seq('//', /.*/),
