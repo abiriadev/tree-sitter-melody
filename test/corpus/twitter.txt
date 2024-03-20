@@ -7,11 +7,8 @@ some of <word>;
 ---
 
 (source_file
-	(statement
+	(expression
+		(literal))
+	(quantifier
 		(expression
-			(literal)))
-	(statement
-		(quantifier
-			(expression
-				(symbol
-					(valid_symbol))))))
+			(symbol))))
