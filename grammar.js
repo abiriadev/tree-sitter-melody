@@ -94,7 +94,7 @@ module.exports = grammar({
 				choice(
 					$.literal,
 					$.range,
-					$.symbol,
+					seq(optional('not'), $.symbol),
 					$.raw,
 					$.negative_char_class,
 					$.variable,
@@ -132,15 +132,13 @@ module.exports = grammar({
 				),
 			),
 
-		symbol: $ => seq(optional('not'), $.valid_symbol),
-
-		valid_symbol: $ =>
+		symbol: $ =>
 			choice(
 				...valid_symbol_names,
-				$.unicode_category,
+				$._unicode_category,
 			),
 
-		unicode_category: _ =>
+		_unicode_category: _ =>
 			choice(...valid_unicode_categories),
 
 		raw: _ => /`([^`]|\\[`\\])*`/,
