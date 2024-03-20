@@ -22,7 +22,8 @@
 			"file-types": [
 				"melody",
 				"mdy"
-			]
+			],
+			"highlights": "./queries/highlights.scm"
 		}
 	]
 }
