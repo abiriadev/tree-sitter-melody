@@ -26,7 +26,7 @@ module.exports = grammar({
 				$.expression,
 			),
 
-		amount: $ => /\d+/,
+		amount: _ => /\d+/,
 
 		expression: $ =>
 			choice(
@@ -146,7 +146,7 @@ module.exports = grammar({
 
 		variable: $ => seq('.', $.identifier),
 
-		identifier: $ => /[a-zA-Z_]+/,
+		identifier: _ => /[a-zA-Z_]+/,
 
 		group: $ =>
 			seq(
@@ -158,7 +158,7 @@ module.exports = grammar({
 				$.block,
 			),
 
-		block: $ => seq('{', repeat($.statement), '}'),
+		block: $ => seq('{', repeat1($.statement), '}'),
 
 		variable_declaration: $ =>
 			seq('let', $.variable, '=', $.block),
