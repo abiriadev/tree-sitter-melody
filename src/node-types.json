@@ -15,13 +15,72 @@
     }
   },
   {
-    "type": "atom",
+    "type": "block",
     "named": true,
-    "fields": {},
+    "fields": {
+      "close": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "}",
+            "named": false
+          }
+        ]
+      },
+      "open": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "{",
+            "named": false
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "expression",
+          "named": true
+        },
+        {
+          "type": "quantifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "expression",
+    "named": true,
+    "fields": {
+      "semicolon": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": ";",
+            "named": false
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "assertion",
+          "named": true
+        },
+        {
+          "type": "group",
+          "named": true
+        },
         {
           "type": "literal",
           "named": true
@@ -39,53 +98,11 @@
           "named": true
         },
         {
-          "type": "semicolon",
-          "named": true
-        },
-        {
           "type": "symbol",
           "named": true
         },
         {
           "type": "variable",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "block",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "statement",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "expression",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "assertion",
-          "named": true
-        },
-        {
-          "type": "atom",
-          "named": true
-        },
-        {
-          "type": "group",
           "named": true
         },
         {
@@ -167,26 +184,7 @@
       "required": false,
       "types": [
         {
-          "type": "statement",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "statement",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "expression",
-          "named": true
-        },
-        {
-          "type": "quantifier",
+          "type": "range",
           "named": true
         }
       ]
@@ -194,21 +192,6 @@
   },
   {
     "type": "symbol",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": false,
-      "types": [
-        {
-          "type": "unicode_category",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "unicode_category",
     "named": true,
     "fields": {}
   },
@@ -248,6 +231,10 @@
   },
   {
     "type": ".",
+    "named": false
+  },
+  {
+    "type": ";",
     "named": false
   },
   {
@@ -536,10 +523,6 @@
   },
   {
     "type": "raw",
-    "named": true
-  },
-  {
-    "type": "semicolon",
     "named": true
   },
   {

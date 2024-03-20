@@ -5,10 +5,10 @@
       "type": "REPEAT",
       "content": {
         "type": "SYMBOL",
-        "name": "statement"
+        "name": "range"
       }
     },
-    "statement": {
+    "_statement": {
       "type": "CHOICE",
       "members": [
         {
@@ -101,11 +101,7 @@
       "type": "PATTERN",
       "value": "\\d+"
     },
-    "semicolon": {
-      "type": "STRING",
-      "value": ";"
-    },
-    "atom": {
+    "_atom": {
       "type": "SEQ",
       "members": [
         {
@@ -120,8 +116,25 @@
               "name": "range"
             },
             {
-              "type": "SYMBOL",
-              "name": "symbol"
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "STRING",
+                      "value": "not"
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "symbol"
+                }
+              ]
             },
             {
               "type": "SYMBOL",
@@ -138,8 +151,12 @@
           ]
         },
         {
-          "type": "SYMBOL",
-          "name": "semicolon"
+          "type": "FIELD",
+          "name": "semicolon",
+          "content": {
+            "type": "STRING",
+            "value": ";"
+          }
         }
       ]
     },
@@ -148,7 +165,7 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "atom"
+          "name": "_atom"
         },
         {
           "type": "SYMBOL",
@@ -226,7 +243,7 @@
             },
             {
               "type": "PATTERN",
-              "value": "[\\u0000-\\u007f]"
+              "value": "[a-zA-Z]"
             },
             {
               "type": "STRING",
@@ -234,107 +251,90 @@
             },
             {
               "type": "PATTERN",
-              "value": "[\\u0000-\\u007f]"
+              "value": "[a-zA-Z]"
             }
           ]
         }
       ]
     },
     "symbol": {
-      "type": "SEQ",
+      "type": "CHOICE",
       "members": [
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "STRING",
-              "value": "not"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
+          "type": "STRING",
+          "value": "<char>"
         },
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "STRING",
-              "value": "<char>"
-            },
-            {
-              "type": "STRING",
-              "value": "<space>"
-            },
-            {
-              "type": "STRING",
-              "value": "<whitespace>"
-            },
-            {
-              "type": "STRING",
-              "value": "<newline>"
-            },
-            {
-              "type": "STRING",
-              "value": "<tab>"
-            },
-            {
-              "type": "STRING",
-              "value": "<return>"
-            },
-            {
-              "type": "STRING",
-              "value": "<feed>"
-            },
-            {
-              "type": "STRING",
-              "value": "<null>"
-            },
-            {
-              "type": "STRING",
-              "value": "<digit>"
-            },
-            {
-              "type": "STRING",
-              "value": "<vertical>"
-            },
-            {
-              "type": "STRING",
-              "value": "<word>"
-            },
-            {
-              "type": "STRING",
-              "value": "<alphabetic>"
-            },
-            {
-              "type": "STRING",
-              "value": "<alphanumeric>"
-            },
-            {
-              "type": "STRING",
-              "value": "<boundary>"
-            },
-            {
-              "type": "STRING",
-              "value": "<backspace>"
-            },
-            {
-              "type": "STRING",
-              "value": "<start>"
-            },
-            {
-              "type": "STRING",
-              "value": "<end>"
-            },
-            {
-              "type": "SYMBOL",
-              "name": "unicode_category"
-            }
-          ]
+          "type": "STRING",
+          "value": "<space>"
+        },
+        {
+          "type": "STRING",
+          "value": "<whitespace>"
+        },
+        {
+          "type": "STRING",
+          "value": "<newline>"
+        },
+        {
+          "type": "STRING",
+          "value": "<tab>"
+        },
+        {
+          "type": "STRING",
+          "value": "<return>"
+        },
+        {
+          "type": "STRING",
+          "value": "<feed>"
+        },
+        {
+          "type": "STRING",
+          "value": "<null>"
+        },
+        {
+          "type": "STRING",
+          "value": "<digit>"
+        },
+        {
+          "type": "STRING",
+          "value": "<vertical>"
+        },
+        {
+          "type": "STRING",
+          "value": "<word>"
+        },
+        {
+          "type": "STRING",
+          "value": "<alphabetic>"
+        },
+        {
+          "type": "STRING",
+          "value": "<alphanumeric>"
+        },
+        {
+          "type": "STRING",
+          "value": "<boundary>"
+        },
+        {
+          "type": "STRING",
+          "value": "<backspace>"
+        },
+        {
+          "type": "STRING",
+          "value": "<start>"
+        },
+        {
+          "type": "STRING",
+          "value": "<end>"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_unicode_category"
         }
       ]
     },
-    "unicode_category": {
+    "_unicode_category": {
       "type": "CHOICE",
       "members": [
         {
@@ -572,19 +572,27 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "STRING",
-          "value": "{"
+          "type": "FIELD",
+          "name": "open",
+          "content": {
+            "type": "STRING",
+            "value": "{"
+          }
         },
         {
           "type": "REPEAT1",
           "content": {
             "type": "SYMBOL",
-            "name": "statement"
+            "name": "_statement"
           }
         },
         {
-          "type": "STRING",
-          "value": "}"
+          "type": "FIELD",
+          "name": "close",
+          "content": {
+            "type": "STRING",
+            "value": "}"
+          }
         }
       ]
     },
