@@ -63,12 +63,9 @@ module.exports = grammar({
 				),
 				seq(
 					optional('not'),
-					// TODO: use ascii range instead
-					// /[\u0000-\u007f]/,
-					/[\da-zA-Z]/,
+					/[\u0000-\u007f]/,
 					'to',
-					// /[\u0000-\u007f]/,
-					/[\da-zA-Z]/,
+					/[\u0000-\u007f]/,
 				),
 			),
 
