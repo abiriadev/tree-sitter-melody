@@ -9,11 +9,8 @@ not ahead {
 ---
 
 (source_file
-	(stmt
-		(pattern
-			(assertion
-				(block
-					(stmt
-						(pattern
-							(literal
-								(string)))))))))
+	(expression
+		(assertion
+			(block
+				(expression
+					(literal))))))
