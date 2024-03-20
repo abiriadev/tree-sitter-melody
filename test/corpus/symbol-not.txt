@@ -7,6 +7,5 @@ not <whitespace>;
 ---
 
 (source_file
-	(stmt
-		(pattern
-			(symbol))))
+	(expression
+		(symbol)))
