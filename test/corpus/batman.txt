@@ -11,22 +11,16 @@ Batman
 ---
 
 (source_file
-	(stmt
-		(quantifier
-			(number)
-			(pattern
-				(literal
-					(string)))))
-	(stmt
-		(quantifier
-			(number)
-			(pattern
-				(group
-					(block
-						(stmt
-							(pattern
-								(symbol)))
-						(stmt
-							(pattern
-								(literal
-									(string))))))))))
+	(quantifier
+		(amount)
+		(expression
+			(literal)))
+	(quantifier
+		(amount)
+		(expression
+			(group
+				(block
+					(expression
+						(symbol))
+					(expression
+						(literal)))))))
