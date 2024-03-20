@@ -9,8 +9,13 @@ some of <word>;
 (source_file
 	(statement
 		(expression
-			(literal)))
+			(atom
+				(literal)
+				(semicolon))))
 	(statement
 		(quantifier
 			(expression
-				(symbol)))))
+				(atom
+					(symbol
+						(valid_symbol))
+						(semicolon))))))
