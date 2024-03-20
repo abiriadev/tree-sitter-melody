@@ -184,7 +184,11 @@
       "required": false,
       "types": [
         {
-          "type": "range",
+          "type": "expression",
+          "named": true
+        },
+        {
+          "type": "quantifier",
           "named": true
         }
       ]

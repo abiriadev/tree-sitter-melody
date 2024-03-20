@@ -5,7 +5,7 @@
       "type": "REPEAT",
       "content": {
         "type": "SYMBOL",
-        "name": "range"
+        "name": "_statement"
       }
     },
     "_statement": {
