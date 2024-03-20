@@ -163,7 +163,7 @@ module.exports = grammar({
 		block: $ =>
 			seq(
 				field('open', '{'),
-				repeat1($.statement),
+				repeat1($._statement),
 				field('close', '}'),
 			),
 
