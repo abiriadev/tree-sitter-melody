@@ -17,3 +17,5 @@
 (valid_symbol) @constant.builtin
 (comment) @comment
 (semicolon) @punctuation.delimiter
+(block open: "{" @punctuation.bracket)
+(block close: "}" @punctuation.bracket)
