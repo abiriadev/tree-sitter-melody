@@ -10,19 +10,14 @@ some of <alphabetic>;
 ---
 
 (source_file
-	(stmt
-		(quantifier
-			(pattern
-				(symbol))))
-	(stmt
-		(pattern
+	(quantifier
+		(expression
 			(symbol)))
-	(stmt
-		(pattern
-			(literal
-				(string))))
-	(stmt
-		(quantifier
-			(number)
-			(pattern
-				(symbol)))))
+		(expression
+			(symbol))
+		(expression
+			(literal))
+			(quantifier
+				(amount)
+				(expression
+					(symbol))))
