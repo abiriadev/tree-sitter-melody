@@ -101,46 +101,54 @@
       "type": "PATTERN",
       "value": "\\d+"
     },
+    "semicolon": {
+      "type": "STRING",
+      "value": ";"
+    },
+    "atom": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "literal"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "range"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "symbol"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "raw"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "negative_char_class"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "variable"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "semicolon"
+        }
+      ]
+    },
     "expression": {
       "type": "CHOICE",
       "members": [
         {
-          "type": "SEQ",
-          "members": [
-            {
-              "type": "CHOICE",
-              "members": [
-                {
-                  "type": "SYMBOL",
-                  "name": "literal"
-                },
-                {
-                  "type": "SYMBOL",
-                  "name": "range"
-                },
-                {
-                  "type": "SYMBOL",
-                  "name": "symbol"
-                },
-                {
-                  "type": "SYMBOL",
-                  "name": "raw"
-                },
-                {
-                  "type": "SYMBOL",
-                  "name": "negative_char_class"
-                },
-                {
-                  "type": "SYMBOL",
-                  "name": "variable"
-                }
-              ]
-            },
-            {
-              "type": "STRING",
-              "value": ";"
-            }
-          ]
+          "type": "SYMBOL",
+          "name": "atom"
         },
         {
           "type": "SYMBOL",
