@@ -4,4 +4,4 @@
 
 ## In action
 
-![](./assets/screenshot.png)
+![](./assets/in-action.png)
